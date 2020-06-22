@@ -6,6 +6,20 @@ rankhospital <- function(state ,outcome ,num="best")
   if(any(hospitaldata$State==state)==FALSE){stop("Invalid State")}
   states <-subset(hospitaldata,hospitaldata$State==state)
  sortedlist <- order(states[,soutcome[outcome]])
+ if(num=="best")
+ {
+   index<-1
+ }
+ else if (num=="worst")
+ {
+   index<-length(sortedlist)
+ }
+ else
+ {
+   index<-num
+ }
+ print(sortedlist)
+
  
  
 }
