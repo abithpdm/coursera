@@ -1,7 +1,8 @@
 #Documented verison of rank hospital script
 rankhospital <- function(stateChr, outcomeChr, rankObj) {
   # --- Init loading outcome data
-  outcomeDfr <- Init("ProgAssignment2-data/outcome-of-care-measures.csv")
+ # outcomeDfr <- Init("ProgAssignment2-data/outcome-of-care-measures.csv")
+  outcomeDfr <-read.csv("outcome-of-care-measures.csv",colClasses = "character",na.strings = c("NA","Not Available"),stringsAsFactors = TRUE)
   
   # --- Coerce character into numeric
   suppressWarnings(outcomeDfr[, 11] <- as.numeric(outcomeDfr[, 11]))
