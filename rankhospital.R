@@ -5,9 +5,11 @@ rankhospital <- function(state ,outcome ,num="best")
   soutcome <- c("heart attack" = 11, "heart failure" = 17, "pneumonia" = 23)
   if (any(names(soutcome)==outcome)==FALSE){stop("Invalid Outcome")}
   if(any(hospitaldata$State==state)==FALSE){stop("Invalid State")}
+  states<-data.frame()
   states <-subset(hospitaldata,hospitaldata$State==state)
-  sortedlist <- states[order(as.integer(states[,soutcome[outcome]])),]
+  sortedlist <- states[order(as.integer(states[,soutcome[outcome]]),states$Hospital.Name),]
   #sortedlist <- states[order(states[,soutcome[outcome]],states$Hospital.Name),]
+  sortedlist<-sortedlist[complete.cases(sortedlist[,soutcome[outcome]])]
   
   if(num=="best")
  {
@@ -15,11 +17,12 @@ rankhospital <- function(state ,outcome ,num="best")
  }
  else if (num=="worst")
  {
-   index<-length(sortedlist)
+   index<-as.numeric(nrow(sortedlist))
  }
  else
  {
    index<-num
  }
 sortedlist
+
 }
