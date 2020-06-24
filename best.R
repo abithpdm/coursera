@@ -2,7 +2,8 @@
 best<-function(state,outcome)
 {
   #read the csv file
-  hospitaldata<-read.csv("outcome-of-care-measures.csv",colClasses = "character")
+ hospitaldata<-read.csv("outcome-of-care-measures.csv",colClasses = "character")
+  
  
    #set index for the diseases already mentioned
   soutcome <- c("heart attack" = 11, "heart failure" = 17, "pneumonia" = 23)
