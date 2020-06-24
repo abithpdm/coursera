@@ -2,7 +2,7 @@
 rankall<-function(outcome,ranknum="best")
 {
   hospitaldata <-read.csv("outcome-of-care-measures.csv",colClasses = "character")
-  #create a table of all states in the data file
+  #create a table of all states in the data file so to obtain number of unique states
   statelist <-data.frame(States = names(tapply(hospitaldata$State, hospitaldata$State, length)),Freq = tapply(hospitaldata$State,hospitaldata$State,length))
   row.names(hospitaldata)<-NULL
   
@@ -13,7 +13,7 @@ rankall<-function(outcome,ranknum="best")
   hospitalname <- character(0)
   for (statename in statelist$States)
   {
-    #creates a dataframe of individual states
+    #creates a dataframe for single state
     statedataframe <- hospitaldata[hospitaldata$State==statename,]
     colnumber <- inputdf[inputdf$Outcome==outcome,2]
     #remove incomplete rows
