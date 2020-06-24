@@ -1,4 +1,5 @@
 #Documented verison of rank hospital script
+#R Script Code to rank hospitals based on states and outcome
 rankhospital <- function(stateChr, outcomeChr, rankObj) {
   # --- Init loading outcome data
  # outcomeDfr <- Init("ProgAssignment2-data/outcome-of-care-measures.csv")
