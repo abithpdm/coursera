@@ -27,7 +27,7 @@ rankall<-function(outcome,ranknum="best")
       ranknum<-nrow(statedataframe)
     else
       ranknum <-suppressWarnings(as.numeric(ranknum))
-    #store the hospital names , rank and outcome
+    #store the hospital names and rank
     hospitalname <- c(hospitalname,statedataframe[ranknum,]$Hospital.Name)
   }
   return(data.frame(hospital = hospitalname ,state = statelist$States))
