@@ -1,3 +1,4 @@
+#This code did incomplete hehehe
 rankhospital <- function(state ,outcome ,num="best")
 {
   #use string as factor while reading the csv
