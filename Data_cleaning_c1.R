@@ -4,7 +4,8 @@ count<-sum(datafile$VAL==24,na.rm = T)
 
 #read excel file
 dat <- read.xlsx("govdata.xlsx",sheetIndex = 1,colIndex = 7:15,rowIndex = 18:23)
-fileurl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+#read xml file 
 xmlfile <- xmlTreeParse("xmldata.xml",useInternalNodes= TRUE)
 rootnode <-xmlRoot(xmlfile)
-postcode <- xpathSApply(rootnode,"//zipcode",xmlValue)
+postcode <- xpathSApply(rootnode,"//zipcode==21231",xmlValue)
+table(postcode==21231)
