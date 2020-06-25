@@ -9,3 +9,6 @@ xmlfile <- xmlTreeParse("xmldata.xml",useInternalNodes= TRUE)
 rootnode <-xmlRoot(xmlfile)
 postcode <- xpathSApply(rootnode,"//zipcode==21231",xmlValue)
 table(postcode==21231)
+
+#using fread to read data
+DT<- fread("americandata.csv")
