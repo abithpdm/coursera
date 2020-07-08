@@ -1,4 +1,4 @@
-#R script to rank all thospitals based on outcome in every state
+#R script to rank all thospitals based on outcome in every state based
 rankall<-function(outcome,ranknum="best")
 {
   hospitaldata <-read.csv("outcome-of-care-measures.csv",colClasses = "character")
