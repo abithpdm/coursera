@@ -13,6 +13,7 @@ rankall<-function(outcome,ranknum="best")
   hospitalname <- character(0)
   for (statename in statelist$States)
   {
+    
     #creates a dataframe for single state
     statedataframe <- hospitaldata[hospitaldata$State==statename,]
     colnumber <- inputdf[inputdf$Outcome==outcome,2]
