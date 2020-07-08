@@ -6,7 +6,7 @@ rankall<-function(outcome,ranknum="best")
   statelist <-data.frame(States = names(tapply(hospitaldata$State, hospitaldata$State, length)),Freq = tapply(hospitaldata$State,hospitaldata$State,length))
   row.names(hospitaldata)<-NULL
   
-  inputdf <- data.frame(Outcome=c("heart attack", "heart failure", "pneumonia"), 
+inputdf <- data.frame(Outcome=c("heart attack", "heart failure", "pneumonia"), 
                         Col = c(11, 17, 23))
   if(nrow(inputdf[inputdf$Outcome==outcome,])==0)
     stop("Invalid outcome")
