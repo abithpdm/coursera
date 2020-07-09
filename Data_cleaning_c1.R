@@ -2,7 +2,7 @@
 datafile <- read.csv("commundata.csv")
 count<-sum(datafile$VAL==24,na.rm = T)
 
-#read excel file
+#read excel file from 
 dat <- read.xlsx("govdata.xlsx",sheetIndex = 1,colIndex = 7:15,rowIndex = 18:23)
 #read xml file 
 xmlfile <- xmlTreeParse("xmldata.xml",useInternalNodes= TRUE)
